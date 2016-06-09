@@ -5,6 +5,7 @@ var roman = ["I", "V", "X", "L", "C", "D", "M"];
 var romanIndex = 0;
 var romanNumeral = [];
 var symbolString = "";
+
 //Concatenates symbols
 var concatenate = function (n) {
   var finalSymbol = "";
@@ -16,11 +17,13 @@ var concatenate = function (n) {
 
 // Converts iterated feedback to roman numbers
 var converter = function(n){
-  if (0 < n < 4) {
+  if (0 < n && n < 4) {
     symbolString = concatenate(n);
     romanNumeral.unshift(symbolString);
 
   } else if (n === 4) {
+    symbolString = (roman[romanIndex]) + (roman[romanIndex + 1]);
+    romanNumeral.unshift(symbolString);
 
   } else if (5<= n < 9) {
 
@@ -55,8 +58,6 @@ $(function(){
     event.preventDefault();
 
     var userInput = $("#userInput").val();
-    console.log(userInput);
-    console.log(typeof userInput);
     var romanNumeral = iterator(userInput);
     $("#result").text(romanNumeral);
   });
