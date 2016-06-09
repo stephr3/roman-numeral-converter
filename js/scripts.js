@@ -8,18 +8,21 @@ var symbolString = "";
 
 //Iterates through each number in user input (reversed)
 var iterator = function(num){
-  var numInputArray = num.split("").reverse().map(Number);
-  for ( i=0 ; i < numInputArray.length ; i++){
-    converter(numInputArray[i]);
+  if (!isNaN(num)){
+    var numInputArray = num.split("").reverse().map(Number);
+    for ( i=0 ; i < numInputArray.length ; i++){
+      converter(numInputArray[i]);
+    }
+  } else {
+    alert("Please enter a valid number.");
   }
+
 };
 
 // Converts iterated feedback to roman numbers
 var converter = function(n){
     romanIndex = i*2;
-    if (n < 0) {
-    alert("Please enter a number greater than zero");
-    } else if (0 < n && n < 4) {
+    if (0 < n && n < 4) {
       symbolString = concatenate(n);
       romanNumeral.unshift(symbolString);
 
