@@ -18,7 +18,7 @@ var iterator = function(num){
       alert("Please enter a number greater than 0 and less than 4000.");
     }
   } else {
-    alert("Please enter a valid number.");
+    alert("Please enter a valid number without commas or any other symbol.");
   }
 };
 
