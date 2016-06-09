@@ -11,13 +11,10 @@ var iterator = function(num){
   var numInputArray = num.split("").reverse().map(Number);
   for ( i=0 ; i < numInputArray.length ; i++){
     converter(numInputArray[i]);
-    // romanIndex = i * 2;
-    // console.log("in iterator: " + roman[romanIndex]);
   }
 };
 
 // Converts iterated feedback to roman numbers
-
 var converter = function(n){
     romanIndex = i*2;
     if (n < 0) {
@@ -44,9 +41,7 @@ var converter = function(n){
 //Concatenates symbols
 var concatenate = function (n) {
   var finalSymbol = "";
-  // console.log("roman index in concatenate before loop: " + romanIndex);
   for (j=0; j<n; j++ ) {
-    // console.log("in concatenate: " + roman[romanIndex]);
     finalSymbol += roman[romanIndex];
   }
   return finalSymbol;
@@ -54,16 +49,13 @@ var concatenate = function (n) {
 
 
 // User Interface Logic
-
 $(function(){
-
   //Submit Button on Click
   $("form").submit(function(event){
     event.preventDefault();
-
     var userInput = $("#userInput").val();
     iterator(userInput);
-
     $(".results").text(romanNumeral.join(""));
+    romanNumeral = [];
   });
 });
