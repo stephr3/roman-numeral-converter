@@ -36,7 +36,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
   if 5 <= n < 9
   n = V + (previous symbol) listed (n % 5) times
-  [ I,**V**, X, L, C, D, M ]
+  [ _I_,**V**, X, L, C, D, M ]
 
   if n=9
   n = (the previous symbol) + (the next symbol)
