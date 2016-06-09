@@ -35,12 +35,12 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
   [ **I**, _V_, X, L, C, D, M ]
 
   if 5 <= n < 9
-  n = V + (previous symbol) listed (n % 5) times
-  [ _I_,**V**, X, L, C, D, M ]
+  n = (the next symbol) + (current symbol) listed (n % 5) times
+  [ **I**, V, X, L, C, D, M ]
 
   if n=9
-  n = (the previous symbol) + (the next symbol)
-  [ _I_, **V** , _X_, L, C, D, M ]
+  n = (the current symbol) + (the symbol after next)
+  [ **I**, V , _X_, L, C, D, M ]
 
 (The same rules apply for each place, but the symbols we start with with shift two to the right each time)
 
