@@ -25,7 +25,12 @@ var converter = function(n){
     symbolString = (roman[romanIndex]) + (roman[romanIndex + 1]);
     romanNumeral.unshift(symbolString);
 
-  } else if (5<= n < 9) {
+  } else if (5<= n && n < 9) {
+
+    var remainder = n % 5;
+    symbolString = (roman[romanIndex + 1]) + (concatenate(remainder));
+    romanNumeral.unshift(symbolString);
+    console.log(romanNumeral);
 
   } else if (n === 9) {
 
@@ -42,7 +47,7 @@ var iterator = function(num){
   var numInputArray = num.split("").reverse().map(Number);
   for ( i=0 ; i < numInputArray.length ; i++){
     converter(numInputArray[i]);
-    romanIndex += 2;
+    romanIndex = i * 2;
   }
 };
 
@@ -58,7 +63,8 @@ $(function(){
     event.preventDefault();
 
     var userInput = $("#userInput").val();
-    var romanNumeral = iterator(userInput);
-    $("#result").text(romanNumeral);
+    iterator(userInput);
+
+    $(".results").text(romanNumeral.join(""));
   });
 });
