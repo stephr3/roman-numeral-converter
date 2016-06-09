@@ -3,8 +3,8 @@
 //Global Variables
 var roman = ["I", "V", "X", "L", "C", "D", "M"];
 var romanIndex = 0;
-var result = [];
-
+var romanNumeral = [];
+var symbolString = "";
 //Concatenates symbols
 var concatenate = function (n) {
   var finalSymbol = "";
@@ -17,6 +17,8 @@ var concatenate = function (n) {
 // Converts iterated feedback to roman numbers
 var converter = function(n){
   if (0 < n < 4) {
+    symbolString = concatenate(n);
+    romanNumeral.unshift(symbolString);
 
   } else if (n === 4) {
 
@@ -33,9 +35,10 @@ var converter = function(n){
 };
 
 var iterator = function(num){
-  var userInputArray = userInput.split("").reverse().map(Number);
-  for ( i=0 ; i < userInputArray.length ; i++){
-    converter(userInputArray[i]);
+
+  var numInputArray = num.split("").reverse().map(Number);
+  for ( i=0 ; i < numInputArray.length ; i++){
+    converter(numInputArray[i]);
     romanIndex += 2;
   }
 };
@@ -52,7 +55,8 @@ $(function(){
     event.preventDefault();
 
     var userInput = $("#userInput").val();
-
+    console.log(userInput);
+    console.log(typeof userInput);
     var romanNumeral = iterator(userInput);
     $("#result").text(romanNumeral);
   });
