@@ -9,14 +9,17 @@ var symbolString = "";
 //Iterates through each number in user input (reversed)
 var iterator = function(num){
   if (!isNaN(num)){
-    var numInputArray = num.split("").reverse().map(Number);
-    for ( i=0 ; i < numInputArray.length ; i++){
-      converter(numInputArray[i]);
+    if (parseInt(num) > 0 && parseInt(num) < 4000) {
+      var numInputArray = num.split("").reverse().map(Number);
+      for ( i=0 ; i < numInputArray.length ; i++){
+        converter(numInputArray[i]);
+      }
+    } else {
+      alert("Please enter a number greater than 0 and less than 4000.");
     }
   } else {
     alert("Please enter a valid number.");
   }
-
 };
 
 // Converts iterated feedback to roman numbers
