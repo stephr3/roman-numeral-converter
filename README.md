@@ -39,7 +39,7 @@ _The app takes user input of a number between 0 and 4000, then displays the numb
   n = (the current symbol) + (the symbol after next)
   [ **I**, V , _X_, L, C, D, M ]
 
-## (The same rules apply for each place, but the symbols we start with with shift two to the right each time)
+(The same rules apply for each place, but the symbols we start with with shift two to the right each time)
 
 * If the user enters a non-number or a number with a comma, an alert will say "Please enter a valid number without commas or any other symbol."
   example input: $%^&*
